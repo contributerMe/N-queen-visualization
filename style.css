@@ -1,185 +1,159 @@
+/* Reset box-sizing for all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Base styles for the body */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5; /* Light gray background */
+  color: #333; /* Dark text color */
 }
 
+/* Header styles */
 .header {
-  position: relative;
-  top: -20px;
   width: 100%;
-  background-color: #011627;
-  color: #fdfffc;
+  background-color: #394867; /* Dark blue background */
+  color: #e8f1f2; /* Light text color */
+  padding: 20px 0;
+  text-align: center;
 }
 
 .header h2 {
   padding: 0.5em;
 }
 
-div.n-queen {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  max-width: 450px;
-  /* border: 1px solid red; */
-}
-
+/* Input box container */
 .inputbox {
   position: relative;
-  top: 1.5em;
-  bottom: 2em;
+  margin-top: 20px;
 }
 
+/* Number input style */
 .numberbox {
   width: 100%;
-  font-size: 14px;
-  padding: 4px;
+  font-size: 20px;
+  padding: 10px;
+  align-items: center;
   border: none;
-  border-bottom: 2px solid #2ec4b6;
+  border-bottom: 2px solid #2ec4b6; /* Teal underline */
   outline: none;
   background: transparent;
+  color: #333; /* Dark text color */
 }
 
+/* Label style for input */
 .inputbox label {
   position: absolute;
-  top: 4px;
-  left: 0px;
-  color: #2ec4b6;
-  font-size: 14px;
-  pointer-events: none;
+  top: 8px;
+  left: 0;
+  color: #2ec4b6; /* Teal label color */
+  font-size: 40px;
   transition: 0.3s;
 }
 
+/* Label behavior on input focus, valid, or disabled */
 .inputbox input:focus ~ label,
-.inputbox input:disabled ~ label,
 .inputbox input:valid ~ label {
-  top: -9px;
-  font-size: 12px;
-  font-weight: 400;
+  top: -12px;
+  font-size: 18px;
 }
 
+/* Slider container style */
 .slider-container {
-  position: absolute;
-  left: 5%;
+  position: relative;
   width: 90%;
-  /* text-align: center; */
   margin: 0 auto;
-  top: 4em;
-  /* border: 2px solid red; */
+  margin-top: 50px; /* Increased margin top */
+  width: 50%;
 }
 
+/* Slider style */
 .slider {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
-  margin: 0 auto;
   height: 7px;
   border-radius: 7px;
-  background: linear-gradient(90deg, #e8eddf 60%, #e8eddf 60%);
+  background: linear-gradient(90deg, #f67280 60%, #c06c84 60%); /* Gradient background */
   outline: none;
+  margin-top: 10px;
 }
 
-.slider::after {
+/* Slider labels */
+.slider::after,
+.slider::before {
   content: "SLOW";
   position: absolute;
-  top: -10px;
+  top: -20px;
   font-size: 14px;
   font-weight: 500;
-  color: #8621fa;
+  color: #f67280; /* Pinkish label color */
 }
 
 .slider::before {
   content: "FAST";
-  position: absolute;
-  top: -10px;
-  right: 0px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #5b21fa;
+  right: 0;
 }
 
-/* Google chrome */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: -2px;
-  cursor: pointer;
-  background-color: #8d21fa;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.slider::-webkit-slider-runnable-track {
-  -webkit-appearance: none;
-  height: 15px;
-  width: 15px;
-  z-index: 1;
-  color: #6308ff;
-}
-
-/* Mozilla firefox */
+/* Slider thumb style */
+.slider::-webkit-slider-thumb,
 .slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
   width: 20px;
   height: 20px;
-  background-color: #2178fa;
+  background-color: #f67280; /* Pinkish thumb color */
   cursor: pointer;
-  position: relative;
-  top: -2px;
   border-radius: 50%;
-  z-index: 2;
+  position: relative;
+  top: -8px;
+  transition: box-shadow 0.3s;
 }
 
-.slider::-webkit-slider-thumb:hover {
-  box-shadow: 0 0 0 2px white, 0 0 0 4px #9c21fa;
+/* Slider thumb hover effect */
+.slider::-webkit-slider-thumb:hover,
+.slider::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #f67280; /* Pinkish hover effect */
 }
 
-#progress-bar {
-  width: 60%;
-  height: 7px;
-  background: #4000ff;
-  border-radius: 7px;
-  position: absolute;
-  top: 7px;
-}
-
+/* Play button styles */
 .play-button {
   position: relative;
-  top: 80px;
-  left: 35%;
+  top: 40px; /* Adjusted top position */
+  left: 50%;
   border: none;
   outline: none;
-  color: #fdfffc;
-  width: 80px;
-  height: 35px;
-  background-color: #4ad9e3;
+  color: #fdfffc; /* White text color */
+  width: 120px; /* Increased button width */
+  height: 40px; /* Increased button height */
+  background-color: #74568f; /* Purple button color */
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  /* z-index: 1; */
 }
 
+/* Play button hover effect */
 .play-button:hover {
   opacity: 0.8;
-  transform: scale(1.05);
+  transform: scale(1);
 }
 
+/* Queen arrangement styles */
 .queen-arrangement {
   position: relative;
   top: 140px;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
-  color: #247ba0;
+  color: #247ba0; /* Blue text color */
 }
 
+/* N-queen board styles */
 #n-queen-board {
   position: relative;
   display: flex;
@@ -196,11 +170,12 @@ div.n-queen {
   justify-content: center;
   flex-direction: column;
   margin: 0 10px;
-  box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   bottom: 10px;
 }
 
+/* Table styles */
 table {
   position: relative;
   border-collapse: collapse;
@@ -221,9 +196,9 @@ h4 {
   top: -5px;
   padding: 8px;
   width: 95%;
-  background-color: #0582ca;
+  background-color: #0582ca; /* Dark blue background */
   align-self: center;
-  color: #fdfffc;
+  color: #fdfffc; /* White text color */
   text-align: center;
   border-radius: 4px 4px 0 0;
 }
