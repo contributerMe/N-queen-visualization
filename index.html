@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N-Queen-Visualiser</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Include SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fdfffc;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .n-queen {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .inputbox {
+      margin-bottom: 20px;
+    }
+
+    .inputbox input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    .inputbox input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 10px;
+      border-radius: 5px;
+      background: #ccc;
+      outline: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #007bff;
+      cursor: pointer;
+    }
+
+    .play-button {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+    .play-button:hover {
+      background-color: #0056b3;
+    }
+
+    #queen-arrangement {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    #n-queen-board {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h2>
+      N-Queens Visualiser <i class="fas fa-crown"></i>
+    </h2>
+  </header>
+  <div class="n-queen">
+    <div class="inputbox">
+      <input type="number" class="numberbox" id="numberbox" required placeholder="Enter total Queens" />
+    </div>
+
+    <div class="slider-container">
+      <input class="slider" id="slider" type="range" min="0" max="100" value="60" />
+      <div id="progress-bar"></div>
+    </div>
+    <button class="play-button" id="play-button">
+      <i class="fa fa-play" aria-hidden="true"></i> Play
+    </button>
+  </div>
+
+  <div class="queen-arrangement" id="queen-arrangement"></div>
+  <div id="n-queen-board"></div>
+  <script src="app.js"></script>
+  <!-- Include SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
